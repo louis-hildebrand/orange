@@ -13,7 +13,18 @@ a {
 }
 
 body {
-    width: 75%;
+    /* Set the content width such that
+     *  (1) the images fill the page on narrow screens,
+     *  (2) the images are not taller than 50% of the screen height on wide screens.
+     *
+     * Let W, H be the width and height of the image.
+     * For all these images, H = 2/3 * W.
+     * Therefore, H = 50vh is equivalent to W = 75vh.
+     */
+    width: min(90%, 75vh);
+}
+
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
