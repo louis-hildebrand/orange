@@ -1,5 +1,4 @@
 html {
-    background-color: hsl(18, 100%, 3%);
     color: white;
     font-family: sans-serif;
     width: 100%;
@@ -27,15 +26,26 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 h2 a {
     text-decoration: none;
 }
 
+h2 {
+    margin-bottom: 0;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 #intro-section {
     width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #images-section {
@@ -47,7 +57,34 @@ h2 a {
 
 img {
     width: 100%;
-    border: 1px solid white; /* TODO: remove this? */
-    /* TODO: what should the actual shadow angle be to match the lighting on the background pattern (which I still need to implement)? */
     box-shadow: 10px 10px 10px black;
+}
+
+/* Background pattern */
+html {
+    --dark-color:   hsl(198, 1%, 12%);
+    --mid-color:    hsl(198, 1%, 13%);
+    --light-color:  hsl(198, 1%, 14%);
+    /* tile size: 2sqrt(3) ~= 3.464 (width) x 6 (height) */
+    --tile-height: 5vh;
+    --tile-width: calc(var(--tile-height) * 0.5774);
+    --tile-size: var(--tile-width) var(--tile-height);
+    background:
+        conic-gradient(from 120deg at 50.00% 83.33%, var(--light-color) 0deg 120deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from -60deg at 50.00% 16.67%, var(--light-color) 0deg 120deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from  60deg at 50.00% 50.00%, var(--light-color) 0deg  60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from 240deg at 50.00% 50.00%, var(--light-color) 0deg  60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from 240deg at 50.00% 50.00%, var(--light-color) 0deg  60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+
+        conic-gradient(from 120deg at 50.00% 50.00%, var(--mid-color) 0deg 60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from 300deg at 50.00% 50.00%, var(--mid-color) 0deg 60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+
+        conic-gradient(from   0deg at 50.00% 50.00%, var(--dark-color) 0deg 60deg, #0000 0deg 360deg) 0 / var(--tile-size),
+        conic-gradient(from 180deg at 50.00% 50.00%, var(--dark-color) 0deg 60deg, #0000 0deg 360deg) 0 / var(--tile-size)
+
+        var(--dark-color);
+}
+
+hr {
+    border: 2px solid white;
 }
