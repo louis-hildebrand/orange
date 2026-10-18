@@ -1,9 +1,30 @@
-let imagesSection = undefined
+let enabled = true;
+let imagesSection = undefined;
 document.addEventListener("DOMContentLoaded", () => {
     imagesSection = document.getElementById("images-section");
+
+    // The infinite looping code doesn't seem to work well on Chrome on iPhone.
+    // I don't have any Apple devices with which to reproduce the issue.
+    // Therefore, just disable JavaScript.
+    //
+    // I expect navigator.platform would be available immediately,
+    // but I don't have an Apple device so who knows.
+    // Set it only on DOMContentLoaded to be extra safe.
+    const isApple = (
+        navigator.platform.includes("iPhone") ||
+        navigator.platform.includes("iPad") ||
+        navigator.platform.includes("iPod") ||
+        navigator.platform.includes("Mac")
+    );
+    if (isApple) {
+        enabled = false;
+    }
 });
 
 document.addEventListener("scroll", (event) => {
+    if (!enabled) {
+        return;
+    }
     const secondImage = imagesSection.children[1];
     const secondImageIsHidden = secondImage.getBoundingClientRect().bottom < 0;
     if (secondImageIsHidden) {
