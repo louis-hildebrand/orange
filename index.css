@@ -108,3 +108,15 @@ header {
 hr {
     border: 2px solid white;
 }
+
+/* Source - https://stackoverflow.com/a/38994837
+ * Posted by Hristo Eftimov, modified by community. See post 'Timeline' for change history
+ * Retrieved 2026-10-17, License - CC BY-SA 4.0
+ */
+html {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox, Safari 18.2+, Chromium 121+ */
+}
+html::-webkit-scrollbar {
+    display: none;  /* Older Safari and Chromium */
+}
