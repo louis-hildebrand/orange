@@ -79,7 +79,7 @@ html {
     --mid-color:        hsl(20, 90%, 35%);
     --light-color:      hsl(20, 90%, 39%);
 
-    --back-color:       hsl(20, 7%, 8%);
+    --back-color:       hsl(20, 7%, 10%);
     background-color:   var(--back-color);
 }
 
