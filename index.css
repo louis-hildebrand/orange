@@ -37,7 +37,7 @@ body {
 
 header {
     width: 100%;
-    height: 40px;
+    height: 15vh;
     margin-bottom: 40px;
     padding-top: 10px;
     padding-bottom: 50px;
@@ -75,11 +75,11 @@ img {
 
 /* Background pattern */
 html {
-    --dark-color:       hsl(18, 65%, 24%);
-    --mid-color:        hsl(18, 65%, 28%);
-    --light-color:      hsl(18, 65%, 32%);
+    --dark-color:       hsl(20, 90%, 31%);
+    --mid-color:        hsl(20, 90%, 35%);
+    --light-color:      hsl(20, 90%, 39%);
 
-    --back-color:       hsl(18, 7%, 8%);
+    --back-color:       hsl(20, 7%, 8%);
     background-color:   var(--back-color);
 }
 
@@ -89,7 +89,7 @@ header {
     --tile-width: calc(var(--tile-height) * 1.155);
     --tile-size: var(--tile-width) var(--tile-height);
     background:
-        linear-gradient(to bottom, transparent, var(--back-color)),
+        linear-gradient(to bottom, transparent, 25%, var(--back-color)),
 
         conic-gradient(from -60deg at 50.00% 33.33%, var(--light-color) 0deg 120deg, #0000 0deg 360deg) 0 / var(--tile-size),
         conic-gradient(from  60deg at 75.00% 50.00%, var(--light-color) 0deg  60deg, #0000 0deg 360deg) 0 / var(--tile-size),
